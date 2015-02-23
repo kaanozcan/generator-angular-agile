@@ -1,3 +1,1 @@
-angular.module('app', []).config(['$controllerProvider', function ($controllerProvider) {
-  this.controllerProvider = $controllerProvider;
-}]);
+angular.module('app', ['app.views', 'app.routes']);
