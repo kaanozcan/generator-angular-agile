@@ -1,6 +1,7 @@
-angular
-  .module('app')
-  .controllerProvider
-  .register('HomeController', [function () {
+(function (module) {
+  module
+    .controllerProvider
+    .register('HomeController', [function () {
 
-}]);
+    }]);
+})(window.APPVIEWS);
