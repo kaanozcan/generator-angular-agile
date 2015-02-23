@@ -65,6 +65,10 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('app/features/routes/home/home.js')
       );
       this.fs.copy(
+        this.templatePath('app/features/views/viewsModule.js'),
+        this.destinationPath('app/features/views/viewsModule.js')
+      );
+      this.fs.copy(
         this.templatePath('app/features/views/home/home.js'),
         this.destinationPath('app/features/views/home/home.js')
       );
