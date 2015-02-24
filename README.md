@@ -1,4 +1,19 @@
-## Work In Progress
+# Work In Progress
+Before you go any further I need to clarify first that this is a still work in progress.
+
+# So What Is This Thingy After All
+This is a yo generator agile work flow kept in mind. If you use this generator you should use modules as much as possible. Just create your modules under app/features directory and build your dependency tree and grunt will compile it for you.
+
+#v0.0.1
+
+*  grunt tasks concat relevant to your modules.
+*  asynchronous views (controllers)
+
+#Planned for next
+
+* options (module name author etc.)
+* less sass support
+
 
 # generator-angular-agile [![Build Status](https://secure.travis-ci.org/kaanozcan/generator-angular-agile.png?branch=master)](https://travis-ci.org/kaanozcan/generator-angular-agile)
 
