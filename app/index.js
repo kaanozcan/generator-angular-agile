@@ -9,6 +9,9 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   prompting: function () {
+    this.options = {
+
+    };
     var done = this.async();
 
     // Have Yeoman greet the user.
@@ -17,14 +20,19 @@ module.exports = yeoman.generators.Base.extend({
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'input',
+      name: 'angularMainModuleName',
+      message: 'Please enter main module name.',
+      default: 'app'
+    }, {
+      type: 'input',
+      name: 'packageName',
+      message: 'Please enter package name.',
+      default: 'package'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.options = props;
 
       done();
     }.bind(this));
@@ -32,53 +40,82 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-      this.fs.copy(
+      var scope = this.options;
+      /**
+       * Project Related
+       */
+
+      var packageJson = this.fs.readJSON(this.templatePath('_package.json'));
+      packageJson.name = scope.packageName;
+      this.fs.writeJSON(this.destinationPath('package.json'), packageJson);
+
+      var bowerJson = this.fs.readJSON(this.templatePath('_bower.json'));
+      packageJson.name = scope.packageName;
+      this.fs.writeJSON(this.destinationPath('bower.json'), packageJson);
+
+      this.fs.copyTpl(
         this.templatePath('_GruntFile.js'),
-        this.destinationPath('GruntFile.js')
+        this.destinationPath('GruntFile.js'),
+        scope
       );
-      this.fs.copy(
+
+      /**
+       * App
+       */
+
+      this.fs.copyTpl(
         this.templatePath('app/index.html'),
-        this.destinationPath('app/index.html')
+        this.destinationPath('app/index.html'),
+        scope
       );
-      this.fs.copy(
+
+      /**
+       * Features Directory
+       */
+
+      this.fs.copyTpl(
         this.templatePath('app/features/app.js'),
-        this.destinationPath('app/features/app.js')
+        this.destinationPath('app/features/app.js'),
+        scope
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('app/features/routes/routesModule.js'),
-        this.destinationPath('app/features/routes/routesModule.js')
+        this.destinationPath('app/features/routes/routesModule.js'),
+        scope
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('app/features/routes/home/home.js'),
-        this.destinationPath('app/features/routes/home/home.js')
+        this.destinationPath('app/features/routes/home/home.js'),
+        scope
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('app/features/routes/home/home.js'),
-        this.destinationPath('app/features/routes/home/home.js')
+        this.destinationPath('app/features/routes/home/home.js'),
+        scope
       );
-      this.fs.copy(
+
+      /**
+       * Views Directory
+       */
+      this.fs.copyTpl(
         this.templatePath('app/features/views/viewsModule.js'),
-        this.destinationPath('app/features/views/viewsModule.js')
+        this.destinationPath('app/features/views/viewsModule.js'),
+        scope
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('app/features/views/home/home.js'),
-        this.destinationPath('app/features/views/home/home.js')
+        this.destinationPath('app/features/views/home/home.js'),
+        scope
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('app/features/views/home/home.html'),
-        this.destinationPath('app/features/views/home/home.html')
+        this.destinationPath('app/features/views/home/home.html'),
+        scope
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('app/features/views/home/home.less'),
-        this.destinationPath('app/features/views/home/home.less')
+        this.destinationPath('app/features/views/home/home.less'),
+        scope
       );
     },
 
