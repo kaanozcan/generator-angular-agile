@@ -12,7 +12,7 @@ This is a yo generator agile work flow kept in mind. If you use this generator y
 #Planned for next
 
 * options (module name author etc.)
-* less sass sport
+* less sass support
 
 
 # generator-angular-agile [![Build Status](https://secure.travis-ci.org/kaanozcan/generator-angular-agile.png?branch=master)](https://travis-ci.org/kaanozcan/generator-angular-agile)
