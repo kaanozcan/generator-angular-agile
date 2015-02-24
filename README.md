@@ -1,5 +1,5 @@
 # Work In Progress
-Before you go any further I need to clerify first that this is a still work in progress.
+Before you go any further I need to clarify first that this is a still work in progress.
 
 # So What Is This Thingy After All
 This is a yo generator agile work flow kept in mind. If you use this generator you should use modules as much as possible. Just create your modules under app/features directory and build your dependency tree and grunt will compile it for you.
