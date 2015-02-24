@@ -16,7 +16,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the slick' + chalk.red('AngularAgile') + ' generator!'
+      'Welcome to the slick ' + chalk.red('AngularAgile') + ' generator!'
     ));
 
     var prompts = [{
