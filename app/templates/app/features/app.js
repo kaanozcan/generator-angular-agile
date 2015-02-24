@@ -1,1 +1,1 @@
-angular.module('app', ['app.views', 'app.routes']);
+angular.module('<%= angularMainModuleName %>', ['<%= angularMainModuleName %>.views', '<%= angularMainModuleName %>.routes']);

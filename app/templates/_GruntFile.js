@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 
     'angular-builder': {
       options: {
-        mainModule: 'app',
+        mainModule: '<%= angularMainModuleName %>',
         externalModules: ['ngRoute'],
         excludedModules: ['app.views']
       },
@@ -24,6 +24,18 @@ module.exports = function (grunt) {
     },
 
     copy: {
+      views: {
+        expand: true,
+        cwd: 'app/features/',
+        src: 'views/**/*.js',
+        dest: 'app/dist/'
+      },
+      html: {
+        expand: true,
+        cwd: 'app/features/',
+        src: '**/*.html',
+        dest: 'app/dist/'
+      },
       viewsModule: {
         flatten: true,
         expand: true,
