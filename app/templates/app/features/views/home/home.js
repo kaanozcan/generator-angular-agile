@@ -2,6 +2,6 @@
   module
     .controllerProvider
     .register('HomeController', [function () {
-
+      this.title = 'Hello World';
     }]);
-})(window.APPVIEWS);
+})(window._<%= angularMainModuleName %>VIEWS);

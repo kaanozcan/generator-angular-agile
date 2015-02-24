@@ -1,15 +1,15 @@
 angular
-  .module('app.routes')
+  .module('<%= angularMainModuleName %>.routes')
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl: 'features/views/home/home.html',
+      templateUrl: 'dist/views/home/home.html',
       controller: 'HomeController',
       controllerAs: 'homeVM',
       resolve: {
         load: ['$http', '$q', '$rootScope', function ($http, $q, $rootScope) {
           var defer = $q.defer();
 
-          $http.get('features/views/home/home.js')
+          $http.get('dist/views/home/home.js')
             .then(function (response) {
               eval(response.data);
               $rootScope.$evalAsync();

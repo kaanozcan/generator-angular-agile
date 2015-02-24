@@ -1,1 +1,1 @@
-angular.module('app.routes', ['ngRoute']);
+angular.module('<%= angularMainModuleName %>.routes', ['ngRoute']);

@@ -5,5 +5,5 @@
       module.controllerProvider = $controllerProvider;
     }]);
 
-  window.APPVIEWS = module;
+  window._<%= angularMainModuleName %>VIEWS = module;
 })();
