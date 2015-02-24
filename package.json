@@ -1,12 +1,12 @@
 {
   "name": "generator-angular-agile",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.2",
+  "description": "Build modular angularjs apps easily.",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "kaanozcan/generator-angular-agile",
   "author": {
-    "name": "Kano",
+    "name": "Kaan Özcan",
     "email": "knzcnn@gmail.com",
     "url": "https://github.com/kaanozcan"
   },
