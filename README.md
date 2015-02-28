@@ -1,4 +1,5 @@
-# generator-angular-agile [![Build Status](https://secure.travis-ci.org/kaanozcan/generator-angular-agile.png?branch=master)](https://travis-ci.org/kaanozcan/generator-angular-agile)
+# generator-angular-agile [![Build Status](https://secure.travis-ci.org/kaanozcan/generator-angular-agile.png?branch=master)](https://travis-ci.org/kaanozcan/generator-angular-agile) 
+[![npm version](https://badge.fury.io/js/generator-angular-agile.svg)](http://badge.fury.io/js/generator-angular-agile)
 
 > [Yeoman](http://yeoman.io) generator
 
